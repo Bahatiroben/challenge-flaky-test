@@ -21,8 +21,8 @@ describe('Sign Up', () => {
 
     cy.get('input[type="submit"]')
       .click()
-      // cy.wait(4500) 
-    cy.wait(4500).get('li')
+      // cy.wait(4500) this would be a solution but it would always take 4500ms while the api might respond in a bit less than this. so timeout is a better solution
+    cy.get('li', {timeout: 4500})
       .should('contain', 'Some Name - some@email.com - core - git-it')
   })
 })
