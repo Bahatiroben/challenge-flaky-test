@@ -21,8 +21,8 @@ describe('Sign Up', () => {
 
     cy.get('input[type="submit"]')
       .click()
-
-    cy.get('li')
+      // cy.wait(4500) 
+    cy.wait(4500).get('li')
       .should('contain', 'Some Name - some@email.com - core - git-it')
   })
 })
